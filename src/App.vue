@@ -5,7 +5,8 @@ import Home from '@/views/Home.vue'
 </script>
 
 <template>
-  <Home msg="哈哈哈哈哈"/>
+  <router-view/>
+  <!-- <Home msg="哈哈哈哈哈"/> -->
 </template>
 
 <style>
