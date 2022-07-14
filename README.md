@@ -22,6 +22,45 @@ npm run build
 ### feature/codeReview -->codeReview專用
 ### feature/rwd -->調整RWD專用
 
+# Tailwind 使用
+## 安裝
+```
+npm install tailwindcss autoprefixer postcss
+```
+### 1.將tailwind導入到CSS檔案中
+```css
+@tailwind base; 
+@tailwind components;
+@tailwind utilities;
+```
+### 2.建立 postcss.config.js檔案
+```javascript
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+### 3.建立tailwind的設定檔
+```
+npx tailwindcss init
+
+//獲得完整版的設定檔案
+npx tailwindcss init --full
+
+```
+### 4.修改設定檔的content
+```javascript
+//tailwind.config.js
+module.exports = {
+  content: [
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+  ],
+}
+```
+## 推薦安裝VS code套件 : tailwindcss
+
 # vue 風格指南
 ## 務必遵守 : 
 ### 1. v-for 要搭配 key值
