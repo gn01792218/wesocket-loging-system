@@ -95,7 +95,7 @@ export const createSocket =()=>{  //使用createSocket的方法，會自動開�
     console.log("創建伺服器")
     Socket && Socket.close()
     if(!Socket){
-        Socket = new WebSocket(url);
+        Socket = new WebSocket(url as string);
         Socket.binaryType='arraybuffer' //切記將binaryType設成二進制
         Socket.onopen = onopenWs  //會打開心跳
         Socket.onmessage = onmessageWs    
