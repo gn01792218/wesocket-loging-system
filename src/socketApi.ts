@@ -26,7 +26,6 @@ const sendPon = ()=>{
         })
     })
     let bytes = foundation.HeartbeatPong.encode(proto).finish()
-    // console.log("sendPon",proto)
     sendWSPush(bytes)
 }
 //發送登入訊息
@@ -149,7 +148,7 @@ export const sendFlyCardCall = (data:any) =>{
         gameUuid : data.gameUuid
     })
     let bytes = game.FlyCardCall.encode(proto).finish()
-    // console.log('sendFlyCardCall',proto)
+    console.log('sendFlyCardCall',proto)
     sendWSPush(bytes);
 }
 //發送歷史資訊Call
@@ -160,7 +159,7 @@ export const sendHistoryCall = () =>{
         }),
     })
     let bytes = history.HistoryCall.encode(proto).finish()
-    // console.log('sendHistoryCall',proto)
+    console.log('sendHistoryCall',proto)
     sendWSPush(bytes);
 }
 //各種接收訊息的方法，在main.js中全局註冊監聽
@@ -172,7 +171,7 @@ export const getMsgReCall = (e:any) =>{
             break;
         case route.LoginRecall:
             let loginRecall = auth.LoginRecall.decode(new Uint8Array(e.detail.msg.data))
-            // console.log('LoginRecall',loginRecall)
+            console.log('LoginRecall',loginRecall)
             store.commit('auth/LoginRecall',loginRecall)
             break;
         case route.LobbyInfo:

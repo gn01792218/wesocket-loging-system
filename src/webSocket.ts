@@ -1,5 +1,5 @@
 
-const url = process.env.VUE_APP_API_HOST;  //後端網址寫在.env檔案中；分為線上環境和測試環境//8199 由keypir控制//8200 可以自由測的
+const url = import.meta.env.VITE_APP_API_HOST;  //後端網址寫在.env檔案中；分為線上環境和測試環境//8199 由keypir控制//8200 可以自由測的
 //建立webSocket實例
 export let Socket:WebSocket | null
 let setIntervalWesocketPush:number
@@ -42,7 +42,7 @@ const oncloseWs = () => {
  const connecting = (message:any) => {
    console.log('正在連接中...')
    if(!setReConnect){
-    setReConnect =setInterval(() => {
+    setReConnect =window.setInterval(() => {
       if (Socket?.readyState === 0) { //readyState 0 表示正在連接中，那就繼續connecting
         connecting(message)
       } else {
@@ -86,7 +86,7 @@ const oncloseWs = () => {
 export const sendPing = (time = 5500, ping = 'ping') => {
     clearInterval(setIntervalWesocketPush)
     Socket?.send(ping)
-    setIntervalWesocketPush = setInterval(() => {
+    setIntervalWesocketPush = window.setInterval(() => {
       Socket?.send(ping)
     }, time)
   }
