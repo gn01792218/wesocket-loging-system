@@ -1,6 +1,5 @@
 export const state = {
-  LobbyInfo: {
-  },
+  LobbyInfo: {},
   showannouncement:false,
   BroadcastTotalPlayersOnline:{}  //玩家在線總人數
 };

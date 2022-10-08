@@ -52,7 +52,7 @@ export const mutations = {
       state.tableDataList.push({
           tableName:table,
           onLine:true,
-          img:require(`../images/${table}.png`),
+          // img:require(`../images/${table}.png`),
           playerMin:i.betRule.player.min,
           playerMax:i.betRule.player.max,
           bankerMin:i.betRule.banker.min,
@@ -67,7 +67,7 @@ export const mutations = {
       state.tableInfoData[table] = {
           tableName:table,
           onLine:true,
-          img:require(`../images/${table}.png`),
+          // img:require(`../images/${table}.png`),
           playerMin:i.betRule.player.min,
           playerMax:i.betRule.player.max,
           bankerMin:i.betRule.banker.min,
