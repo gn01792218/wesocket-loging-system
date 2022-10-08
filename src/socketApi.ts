@@ -37,7 +37,7 @@ export const sendLogin =(data:any) => {
         token:data.token,
     })
     let bytes = auth.LoginCall.encode(proto).finish()
-    // console.log("sendLogin",proto)
+    console.log("sendLogin",proto)
     sendWSPush(bytes);
 }
 //發送選桌訊息
@@ -173,12 +173,14 @@ export const getMsgReCall = (e:any) =>{
             let loginRecall = auth.LoginRecall.decode(new Uint8Array(e.detail.msg.data))
             console.log('LoginRecall',loginRecall)
             store.commit('auth/LoginRecall',loginRecall)
+            store.commit('logSystem/pushLogMsg',loginRecall)
             break;
         case route.LobbyInfo:
             let lobbyInfo = lobby.LobbyInfo.decode(new Uint8Array(e.detail.msg.data))
             // console.log('lobbyInfo',lobbyInfo)
             store.commit('lobby/LobbyInfo',lobbyInfo)
             store.commit('table/setTable',lobbyInfo.tables)
+            store.commit('logSystem/pushLogMsg',lobbyInfo)
             break;
         case route.BroadcastTotalPlayersOnline:
             let BroadcastTotalPlayersOnline = lobby.BroadcastTotalPlayersOnline.decode(new Uint8Array(e.detail.msg.data))
@@ -194,6 +196,7 @@ export const getMsgReCall = (e:any) =>{
             let TableJoinRecall = table.TableJoinRecall.decode(new Uint8Array(e.detail.msg.data))
             // console.log('TableJoinRecall',TableJoinRecall)
             store.commit('table/TableJoinRecall',TableJoinRecall)
+            store.commit('logSystem/pushLogMsg',TableJoinRecall)
             break;
         case route.BroadcastChat:
             let BroadcastChat = chat.BroadcastChat.decode(new Uint8Array(e.detail.msg.data))

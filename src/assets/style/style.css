@@ -1,3 +1,52 @@
 @tailwind base; 
 @tailwind components;
 @tailwind utilities;
+
+
+/* base */
+::-webkit-scrollbar{
+    width: 0px;/*竖向滚动条的宽度*/
+    height: 20px;/*横向滚动条的高度*/
+}
+::-webkit-scrollbar-thumb{/*滚动条里面的小方块*/
+    background: #ddc9aa;
+    border-radius: 44px;
+}
+::-webkit-scrollbar-track{/*滚动条轨道的样式*/
+    background: #eee9e0;
+    border-radius: 44px;
+}
+
+/* layout */
+body{
+    @apply bg-black
+}
+.app {
+    @apply min-h-screen
+}
+.login-page {
+    @apply text-white
+}
+/* component */
+.ws-msg {
+    @apply flex
+}
+/* designSystem */
+.primary-bg-color-500 {
+    @apply bg-sky-500;
+}
+.primary-bg-color-400 {
+    @apply bg-sky-400;
+}
+/* btn */
+.primary-btn {
+    @apply w-full h-[50px] primary-bg-color-500 rounded-md shadow-xl hover:bg-sky-400
+}
+/* input */
+.primary-input {
+    @apply w-full h-[50px] rounded-md
+}
+/* form */
+.primary-form {
+    @apply w-[300px] min-h-[200px] flex flex-col justify-evenly
+}
