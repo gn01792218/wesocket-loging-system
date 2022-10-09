@@ -25,7 +25,7 @@ body{
     @apply bg-black
 }
 .app {
-    @apply min-h-screen
+    @apply min-h-screen mt-5
 }
 .log-page {
     @apply text-white
