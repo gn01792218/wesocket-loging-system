@@ -25,16 +25,9 @@
   import TheHeader from '../component/TheHeader.vue'
   import { LogMsg } from '../type/log'
   import { useStore } from 'vuex'
-  import useTable from '../compasable/useTable'
   import useLogSystem from '../compasable/useLogSystem'
 
   const store = useStore()
-  const { tableJoinCall,tableList } = useTable(store)
   const { logArr } = useLogSystem(store)
-
-  onMounted(()=>{
-    let tableA = tableList.value.find((i:any)=>i.name.includes('A'))
-    tableJoinCall(tableA.uuid)
-  })
 
   </script>
