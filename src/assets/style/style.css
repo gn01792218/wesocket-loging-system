@@ -22,7 +22,7 @@ body{
     @apply bg-black
 }
 .app {
-    @apply min-h-screen
+    @apply min-h-screen p-10
 }
 .login-page {
     @apply text-white
@@ -31,12 +31,27 @@ body{
 .ws-msg {
     @apply flex
 }
+.ws-msg>.log-msg::selection {
+    @apply bg-red-500 text-white;
+}
 /* designSystem */
 .primary-bg-color-500 {
     @apply bg-sky-500;
 }
 .primary-bg-color-400 {
     @apply bg-sky-400;
+}
+.text-acent-server {
+    @apply text-yellow-500
+}
+.text-acent-client {
+    @apply text-sky-500
+}
+.text-acent-error {
+    @apply text-red-500
+}
+.text-grey {
+    @apply text-gray-500
 }
 /* btn */
 .primary-btn {

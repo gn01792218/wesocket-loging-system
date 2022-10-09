@@ -1,5 +1,6 @@
 <template>
     <div class="login-page">
+      <TheHeader />
       <!-- 切桌 -->
       <!-- <div class="flex">
         <button class="primary-btn"
@@ -10,7 +11,7 @@
         </button>
       </div> -->
       <!-- loging內容 -->
-      <div class="">
+      <div class="w-[90%] mx-auto flex flex-col justify-center">
         <WsMsg class="mb-2" v-for="log in logArr" :key="log.message"
           :log-msg="log"
         />
@@ -19,21 +20,21 @@
   
   </template>
   <script setup lang="ts">
-  import { computed, onMounted, ref } from 'vue'
+  import { onMounted } from 'vue'
+  import WsMsg from '../component/WsMsg.vue'
+  import TheHeader from '../component/TheHeader.vue'
   import { LogMsg } from '../type/log'
   import { useStore } from 'vuex'
   import useTable from '../compasable/useTable'
-  import WsMsg from '../component/WsMsg.vue'
+  import useLogSystem from '../compasable/useLogSystem'
+
   const store = useStore()
   const { tableJoinCall,tableList } = useTable(store)
+  const { logArr } = useLogSystem(store)
 
-  const logArr = computed(()=>{
-    return store.state.logSystem.logMsgArr
-  })
   onMounted(()=>{
     let tableA = tableList.value.find((i:any)=>i.name.includes('A'))
     tableJoinCall(tableA.uuid)
   })
 
-  
   </script>

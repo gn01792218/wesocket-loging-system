@@ -1,1 +1,2 @@
-interface LogMsg {}
+declare interface LogMsg {}
+declare enum LogMsgType {}

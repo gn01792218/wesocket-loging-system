@@ -1,13 +1,17 @@
 <template>
   <div class="ws-msg">
-    <p class="w-[90px]">{{dataFomate(new Date())}}</p>
-    <p class="w-[90px]">{{ logMsg.title }}</p>
-    <p class="w-[85%]">{{ logMsg.message }}</p>
+    <p class="w-[200px]">{{dataFomate(new Date())}}</p>
+    <p class="w-[90px]" 
+      :class="[{'text-acent-server':logMsg.type === LogMsgType.SERVER},
+      {'text-acent-client':logMsg.type === LogMsgType.CLIENT},
+      {'text-acent-error':logMsg.type === LogMsgType.ERROR}]"
+    >{{ logMsg.title }}</p>
+    <p class="log-msg w-[60%] text-grey">{{ logMsg.message }}</p>
   </div>
 </template>
   
 <script setup lang="ts">
-import { LogMsg } from "../type/log";
+import { LogMsg, LogMsgType } from "../type/log";
 import useMoment from '../compasable/useMoment'
 defineProps<{
   logMsg: LogMsg;
