@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="primary-btn" @click="betRequest(1,2)">下注</button>
+        <!-- <button class="primary-btn" @click="betRequest(1,2)">下注</button> -->
     </div>
 </template>
   

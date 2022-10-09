@@ -4,6 +4,9 @@
 
 
 /* base */
+html {
+    scroll-behavior: smooth;
+}
 ::-webkit-scrollbar{
     width: 10px;/*竖向滚动条的宽度*/
     height: 20px;/*横向滚动条的高度*/
@@ -22,9 +25,9 @@ body{
     @apply bg-black
 }
 .app {
-    @apply min-h-screen p-10
+    @apply min-h-screen
 }
-.login-page {
+.log-page {
     @apply text-white
 }
 /* component */
