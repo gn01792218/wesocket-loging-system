@@ -1,11 +1,14 @@
-export const state = {
+interface State{
+  HistoryRecall:Array<any>
+}
+export const state:State = {
   HistoryRecall:[]
   };
   export const actions = {}
   
   export const mutations = {
-    HistoryRecall(state:any,payload:any){
-      state.HistoryRecall = payload.histories
+    HistoryRecall(state:State,payload:Array<any>){
+      state.HistoryRecall = payload
     },
   };
   export const getters = {
