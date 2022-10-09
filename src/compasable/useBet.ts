@@ -1,5 +1,5 @@
 import { sendBetCall } from '../socketApi'
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import { Store } from 'vuex'
 export default function useBet(store:Store<any>){
     const roundUuid = computed(() => {
@@ -13,6 +13,9 @@ export default function useBet(store:Store<any>){
             betArea:1,
         })
     }
+    watch(roundUuid,()=>{
+        betRequest(1,2)
+    })
     return {
         //methods
         betRequest,
