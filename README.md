@@ -14,9 +14,9 @@ npm run build
 ```
 # 專案說明
 ## Log文字顏色說明 :
-藍色 : 客戶端發送的ws
-黃色 : 伺服器端發送的ws
-紅色 : 伺服器回應的錯誤訊息、警示訊息(如踢出)
+<span style="color:blue">藍色 :</span> 客戶端發送的ws<br/>
+<span style="color:yellow">黃色 :</span> 伺服器端發送的ws <br/>
+<span style="color:red">紅色 :</span> 伺服器回應的錯誤訊息、警示訊息(如踢出)
 ## Log產生時間說明 :
 log的時間戳為 "客戶端" 接收到 "伺服器端" 信息時產生的。 
 
