@@ -301,12 +301,12 @@ export const getMsgReCall = (e:any) =>{
             break;
         case route.kickoutwarn:
             let kickoutwarn = kick.kickoutWarn.decode(new Uint8Array(e.detail.msg.data))
-            store.commit('logSystem/pushLogMsg',{title:'閒置踢除警告: ', message:kickoutwarn, type:LogMsgType.SERVER})
+            store.commit('logSystem/pushLogMsg',{title:'閒置踢除警告: ', message:kickoutwarn, type:LogMsgType.WARN})
             // console.log('kickoutwarn',kickoutwarn)
             break;
         case route.Kickout:
             let Kickout = kick.kickout.decode(new Uint8Array(e.detail.msg.data))
-            store.commit('logSystem/pushLogMsg',{title:'閒置剔除: ', message:Kickout, type:LogMsgType.SERVER})
+            store.commit('logSystem/pushLogMsg',{title:'閒置剔除: ', message:Kickout, type:LogMsgType.WARN})
             // console.log('Kickout',Kickout)
             break;
         case route.HistoryRecall:

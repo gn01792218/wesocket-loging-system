@@ -6,5 +6,6 @@ export interface LogMsg {
 export enum LogMsgType {
     CLIENT,
     SERVER,
-    ERROR
+    ERROR,
+    WARN,
 }

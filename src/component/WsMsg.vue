@@ -4,7 +4,7 @@
     <p class="w-[110px]" 
       :class="[{'text-acent-server':logMsg.type === LogMsgType.SERVER},
       {'text-acent-client':logMsg.type === LogMsgType.CLIENT},
-      {'text-acent-error':logMsg.type === LogMsgType.ERROR}]"
+      {'text-acent-error':logMsg.type === LogMsgType.ERROR || LogMsgType.WARN}]"
     >{{ logMsg.title }}</p>
     <p class="log-msg w-[60%] text-grey">{{ logMsg.message }}</p>
   </div>
