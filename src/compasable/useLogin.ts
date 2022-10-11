@@ -7,12 +7,12 @@ export default function useLogin(store:Store<any>){
     
     const userToken = ref<string>('DEV_TOKEN')
     const loginStatus = computed(()=>{
-        return store.state.auth.LoginRecall.status
+        return store.state.auth.LoginRecall
     })
 
     //watcher
     const stopLogingStatusWatcher = watch(loginStatus,()=>{
-        switch(loginStatus.value){
+        switch(loginStatus.value.status){
             case -1:
                 alert('驗證失敗')
                 break
