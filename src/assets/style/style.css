@@ -9,15 +9,13 @@ html {
 }
 ::-webkit-scrollbar{
     width: 10px;/*竖向滚动条的宽度*/
-    height: 20px;/*横向滚动条的高度*/
+    height: 0px;/*横向滚动条的高度*/
 }
 ::-webkit-scrollbar-thumb{/*滚动条里面的小方块*/
-    background: #ddc9aa;
-    border-radius: 44px;
+    @apply bg-[#ca933f] rounded-sm
 }
 ::-webkit-scrollbar-track{/*滚动条轨道的样式*/
-    background: #eee9e0;
-    border-radius: 44px;
+    @apply bg-[#eee9e0] rounded-sm
 }
 
 /* layout */
