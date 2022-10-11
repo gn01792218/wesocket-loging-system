@@ -31,4 +31,5 @@
   const store = useStore()
   const { logArr, toBottom, onScroll } = useLogSystem(store)
   const { getAssetsFileURL } = useUtil()
+
   </script>
