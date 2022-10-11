@@ -177,7 +177,8 @@ export const getMsgReCall = (e:any) =>{
             let loginRecall = auth.LoginRecall.decode(new Uint8Array(e.detail.msg.data))
             console.log('LoginRecall',loginRecall)
             store.commit('auth/LoginRecall',loginRecall)
-            store.commit('logSystem/pushLogMsg',{title:'登入回應: ', message:loginRecall, type:LogMsgType.SERVER})
+            if(loginRecall.status === -1) store.commit('logSystem/pushLogMsg',{title:'登入回應: ', message:loginRecall, type:LogMsgType.ERROR})
+            else store.commit('logSystem/pushLogMsg',{title:'登入回應: ', message:loginRecall, type:LogMsgType.SERVER})
             break;
         case route.LobbyInfo:
             let lobbyInfo = lobby.LobbyInfo.decode(new Uint8Array(e.detail.msg.data))
