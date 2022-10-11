@@ -1,5 +1,5 @@
 import {sendWSPush} from "./webSocket"
-import protoRoot from '@/assets/js/bundle'
+import protoRoot from '../public/js/bundle'
 import store from './store' //在元件之外要使用store，不能用useStore
 import router from "./router"
 import { LogMsgType } from './type/log'
